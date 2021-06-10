@@ -103,7 +103,7 @@ class GuestController extends Controller
             'customer_id'=>'required|integer',
             'status'=>'required|boolean',
             'country'=>'required|max:255',
-            'country'=>'required|max:255',
+            // 'country'=>'required|max:255',
         ]);
 
         $customer=Customer::findOrFail($request->customer_id);
@@ -133,6 +133,24 @@ class GuestController extends Controller
         $products=Product::all();
 
         return view('pages.orderEdit',compact('order','products'));
+    }
+
+    public function orderUpdate(Request $request,$id){
+
+        $validated=$request->validate([
+            'customer_id'=>'required|integer',
+            'status'=>'required|boolean',
+            'country'=>'required|max:255',
+            // 'country'=>'required|max:255',
+        ]);
+
+        $products=Product::findOrFail($request->product_id);
+        $order=Order::findOrFail($id);
+        $order->update($validated);
+        $order->products()->sync($products);
+        $order->save();
+        
+        return redirect()->route('order',$id);
     }
 
     //PRODUCTS

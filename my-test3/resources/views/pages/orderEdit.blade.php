@@ -13,9 +13,14 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="">
+                <form method="POST" action="{{route('orderUpdate',$order->id)}}">
                     @csrf
                     @method('POST')
+                    {{-- customer --}}
+                    <div class="form-group">
+                        <label for="customer_id">ID Cliente</label>
+                        <input type="text" class="form-control" name="customer_id" id="customer_id" value="{{$order->customer->id}}" readonly>
+                    </div>
                     <div class="form-group">
                       <label for="status">Status</label>
                       <select name="status" id="status">
