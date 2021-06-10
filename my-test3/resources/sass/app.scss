@@ -1,0 +1,21 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.customer{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: auto;
+}
+.customer-active{
+    background-color: lightgreen;
+}
+.customer-inactive{
+    background-color: red;
+}
