@@ -5,7 +5,13 @@
 @endsection
 
 @section('create')
-    <h1>Create New Order</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-4 text-left">
+            @include('components.goToOrders')
+        </div>
+    </div>
+</div> 
 @endsection
 
 @section('content')
@@ -13,6 +19,7 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-12">
+                <h1>Create New Order</h1>
                 <form method="POST" action="{{route('orderStore',$customer->id)}}">
                     @csrf
                     @method('POST')

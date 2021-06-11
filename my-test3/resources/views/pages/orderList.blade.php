@@ -86,7 +86,7 @@
                                         <a href="{{route('orderEdit',$order->id)}}">
                                             <i class="fas fa-edit mx-3"></i>
                                         </a>
-                                        <a href="">
+                                        <a href="{{route('orderDelete',$order->id)}}">
                                             <i class="fas fa-trash mx-3"></i>
                                         </a>
                                     </div>

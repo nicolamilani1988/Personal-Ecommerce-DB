@@ -5,9 +5,20 @@
 @endsection
 
 @section('create')
-    <a href="">
-        <button class="btn btn-primary">CREATE NEW PRODUCT</button>
-    </a>
+<div class="container">
+    <div class="row justify-content-around">
+        <div>
+            <a href="">
+                <button class="btn btn-primary">CREATE NEW PRODUCT</button>
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <button class="btn btn-primary">UPDATE THIS PRODUCT</button>
+            </a>
+        </div>
+    </div>
+</div>  
 @endsection
 
 @section('content')

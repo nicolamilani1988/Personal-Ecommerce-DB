@@ -5,9 +5,18 @@
 @endsection
 
 @section('create')
-    <a href="{{route('orderEdit',$order->id)}}">
-        <button class="btn btn-primary">UPDATE ORDER</button>
-    </a>
+<div class="container">
+    <div class="row">
+        <div class="col-4 text-left">
+            @include('components.goToOrders')
+        </div>
+        <div class="col-4">
+            <a href="{{route('orderEdit',$order->id)}}">
+                <button class="btn btn-primary">UPDATE ORDER</button>
+            </a>
+        </div>
+    </div>
+</div>   
 @endsection
 
 @section('content')
@@ -42,7 +51,11 @@
                     </li>
                     @foreach ($order->products as $product)
                     <li class="list-group-item">
-                        <div>Prodotto:{{$product->id}} - {{$product->name}}</div>
+                        <div>
+                            <a href="{{route('product',$product->id)}}">
+                                Prodotto:{{$product->id}} - {{$product->name}}
+                            </a>
+                        </div>
                         <div>Fornitore:{{$product->supplier}}</div>
                         <div>Prezzo:{{$product->price}}</div>
                         <div>

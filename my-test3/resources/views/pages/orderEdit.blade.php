@@ -5,7 +5,13 @@
 @endsection
 
 @section('create')
-    Edit Order {{$order->id}}
+<div class="container">
+    <div class="row">
+        <div class="col-4 text-left">
+            @include('components.goToOrders')
+        </div>
+    </div>
+</div> 
 @endsection
 
 @section('content')
@@ -13,6 +19,7 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-12">
+                <h1>Edit Order {{$order->id}}</h1>
                 <form method="POST" action="{{route('orderUpdate',$order->id)}}">
                     @csrf
                     @method('POST')

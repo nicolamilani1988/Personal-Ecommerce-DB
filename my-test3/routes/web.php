@@ -60,6 +60,9 @@ Route::get('order/edit/{id}','GuestController@orderEdit')
 Route::post('order/update/{id}','GuestController@orderUpdate')
 ->name('orderUpdate');
 
+Route::get('/delete/order/{id}','GuestController@orderDelete')
+->name('orderDelete');
+
 
 //PRODUCT ROUTES
 Route::get('/product/{id}','GuestController@product') //scheda prodotto

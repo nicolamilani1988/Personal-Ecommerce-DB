@@ -49,7 +49,7 @@ class GuestController extends Controller
         $detail->customer()->associate($customer);
         $detail->save();
         //dd($detail);
-        return redirect()->route('homepage');
+        return redirect()->route('customerList');
     }
 
     public function customerEdit($id){
@@ -78,7 +78,7 @@ class GuestController extends Controller
         //dd($customer->detail);
         $customer->detail->update($validated);
 
-        return redirect()->route('homepage');
+        return redirect()->route('customerList');
     }
 
     public function customerDelete($id){
@@ -86,7 +86,7 @@ class GuestController extends Controller
         $customer=Customer::findOrFail($id);
         $customer->deleted = true;
         $customer->save();
-        return redirect()->route('homepage');
+        return redirect()->route('customerList');
     }
 
     // ORDERS
@@ -164,6 +164,15 @@ class GuestController extends Controller
         
         return redirect()->route('order',$id);
     }
+
+    public function orderDelete($id){
+
+        $order=Order::findOrFail($id);
+        $order->deleted = true;
+        $order->save();
+        return redirect()->route('orderList');
+    }
+
 
     //PRODUCTS
     public function product($id){ //show product

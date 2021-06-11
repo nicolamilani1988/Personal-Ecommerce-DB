@@ -4,6 +4,16 @@
     Create New Customer
 @endsection
 
+@section('create')
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-4 text-left">
+            @include('components.goToCustomers')
+        </div>
+    </div>
+</div>  
+@endsection
+
 @section('content')
     
     <div class="container py-4">

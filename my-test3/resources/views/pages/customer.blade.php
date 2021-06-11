@@ -5,9 +5,18 @@
 @endsection
 
 @section('create')
-    <a href="{{route('orderCreate',$customer->id)}}">
-        <button class="btn btn-primary">CREATE NEW ORDER</button>
-    </a>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-4 text-left">
+            @include('components.goToCustomers')
+        </div>
+        <div class="col-4">
+            <a href="{{route('orderCreate',$customer->id)}}">
+                <button class="btn btn-primary">CREATE NEW ORDER</button>
+            </a>
+        </div>
+    </div>
+</div>  
 @endsection
 
 @section('content')
