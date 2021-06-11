@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('page-title')
-    HOMEPAGE
+    CUSTOMER LIST
 @endsection
 
 @section('create')

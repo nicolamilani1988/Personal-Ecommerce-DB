@@ -10,14 +10,20 @@ use App\Order;
 
 class GuestController extends Controller
 {
-    public function home(){  //show customers
+    public function home(){
+
+        return view('pages.homepage');
+    }
+
+
+    // CUSTOMERS
+    public function customerList(){  //show customers
 
         $customers = Customer::where('deleted', false)->get();
         $detail = Customer::find(1)->detail;
-        return view('pages.home',compact('customers','detail'));
+        return view('pages.customerList',compact('customers','detail'));
     }
-
-    // CUSTOMERS
+    
     public function customer($id){ //show customer
 
         $customer=Customer::findOrFail($id);
@@ -84,6 +90,12 @@ class GuestController extends Controller
     }
 
     // ORDERS
+    public function orderList(){  //show customers
+
+        $orders = Order::where('deleted', false)->get();
+        return view('pages.orderList',compact('orders'));
+    }
+
     public function order($id){
 
         $order=Order::findOrFail($id);

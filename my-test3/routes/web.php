@@ -21,6 +21,9 @@ Route::get('/','GuestController@home') //pagina home->lista clienti
 ->name('homepage');
 
 // CUSTOMER ROUTES
+Route::get('/customer/all','GuestController@customerList') //pagina home->lista clienti
+->name('customerList');
+
 Route::get('/customer/{id}','GuestController@customer') //pagina personale cliente,lista ordini e link a prodotti
 ->name('customer');
 
@@ -38,6 +41,9 @@ Route::get('/delete/customer/{id}','GuestController@customerDelete')
 ->name('customerDelete');
 
 // ORDER ROUTES
+Route::get('/order/all','GuestController@orderList') //pagina home->lista clienti
+->name('orderList');
+
 Route::get('order/{id}','GuestController@order')
 ->name('order');
 
