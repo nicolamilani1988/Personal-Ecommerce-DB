@@ -5,9 +5,18 @@
 @endsection
 
 @section('create')
-    <a href="{{route('customerCreate')}}">
-        <button class="btn btn-primary">CREATE NEW CUSTOMER</button>
-    </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 text-left">
+                @include('components.goToOrders')
+            </div>
+            <div class="col-4">
+                <a href="{{route('customerCreate')}}">
+                    <button class="btn btn-primary">CREATE NEW CUSTOMER</button>
+                </a>
+            </div>
+        </div>
+    </div>   
 @endsection
 
 @section('content')

@@ -5,7 +5,16 @@
 @endsection
 
 @section('create')
-        <button class="btn btn-light">ENTRA NELLA PAGINA CLIENTE PER CREARE UN NUOVO ORDINE</button>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-4 text-left">
+            @include('components.goToCustomers')
+        </div>
+        <div class="col-4">
+            <button class="btn btn-light">ENTRA NELLA PAGINA CLIENTE PER CREARE UN NUOVO ORDINE</button>
+        </div>
+    </div>
+</div>  
 @endsection
 
 @section('content')
@@ -33,11 +42,11 @@
                                     <div class="col-2 text-center">
                                          TOT (€)
                                     </div>
-                                    <div class="col-1">
-                                        STATUS
-                                    </div>
                                     <div class="col-2 text-center">
                                         ACTIONS
+                                    </div>
+                                    <div class="col-1">
+                                        STATUS
                                     </div>
                                 </div>
                             </div>
@@ -72,14 +81,6 @@
                                         @endforeach
                                         {{$sum}}
                                     </div>
-                                    {{-- cliente attivo / inattivo --}}
-                                    <div class="col-1">
-                                        @if ($order->status)
-                                            <div class="customer customer-active"></div>
-                                        @else
-                                            <div class="customer customer-inactive"></div>
-                                        @endif
-                                    </div>
                                     {{-- actions --}}
                                     <div class="col-2 d-flex justify-content-center">
                                         <a href="{{route('orderEdit',$order->id)}}">
@@ -88,6 +89,14 @@
                                         <a href="">
                                             <i class="fas fa-trash mx-3"></i>
                                         </a>
+                                    </div>
+                                    {{-- cliente attivo / inattivo --}}
+                                    <div class="col-1">
+                                        @if ($order->status)
+                                            <div class="customer customer-active"></div>
+                                        @else
+                                            <div class="customer customer-inactive"></div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

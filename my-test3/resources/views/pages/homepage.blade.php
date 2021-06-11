@@ -17,19 +17,10 @@
                 <h1 class="text-center">Select View</h1>
 
             </div>
-            {{-- customer --}}
+            
             <div class="col-12 d-flex justify-content-around">
-                <div>
-                    <a href="{{route('customerList')}}">
-                        <button class="btn btn-primary">VIEW CUSTOMERS LIST</button>
-                    </a>
-                </div>
-                {{-- orders --}}
-                <div>
-                    <a href="{{route('orderList')}}">
-                        <button class="btn btn-primary">VIEW ORDERS LIST</button>
-                    </a>
-                </div>
+                @include('components.goToCustomers')
+                @include('components.goToOrders')
             </div>
             
         </div>

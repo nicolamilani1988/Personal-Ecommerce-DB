@@ -53,7 +53,7 @@
 {{-- Create-item Bar --}}
 <div class="container-fluid bg-dark text-light text-center py-2">
     <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-12">
             @yield('create')
         </div>
     </div>
