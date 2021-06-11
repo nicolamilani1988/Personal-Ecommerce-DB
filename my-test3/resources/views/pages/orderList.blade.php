@@ -5,7 +5,7 @@
 @endsection
 
 @section('create')
-        <button class="btn btn-primary">ENTRA NELLA PAGINA CLIENTE PER CREARE UN NUOVO ORDINE</button>
+        <button class="btn btn-light">ENTRA NELLA PAGINA CLIENTE PER CREARE UN NUOVO ORDINE</button>
 @endsection
 
 @section('content')
@@ -24,17 +24,20 @@
                                     <div class="col-1">
                                         ID
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         CUSTOMER NAME
                                     </div>
                                     <div class="col-3" onclick="test">
                                         SHIPMENT COUNTRY
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-2 text-center">
                                          TOT (€)
                                     </div>
                                     <div class="col-1">
                                         STATUS
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        ACTIONS
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +53,7 @@
                                             {{$order->id}}
                                         </a>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <a href="{{route('customer',$order->customer->id)}}">
                                             {{$order->customer->name}}
                                         </a>
@@ -58,7 +61,7 @@
                                     <div class="col-3">
                                         {{$order->country}}
                                     </div>
-                                    <div class="col-3 d-flex justify-content-center">
+                                    <div class="col-2 d-flex justify-content-center">
                                         @php
                                             $sum=0;
                                         @endphp
@@ -76,6 +79,15 @@
                                         @else
                                             <div class="customer customer-inactive"></div>
                                         @endif
+                                    </div>
+                                    {{-- actions --}}
+                                    <div class="col-2 d-flex justify-content-center">
+                                        <a href="{{route('orderEdit',$order->id)}}">
+                                            <i class="fas fa-edit mx-3"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="fas fa-trash mx-3"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
