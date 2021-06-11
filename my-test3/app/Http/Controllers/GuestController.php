@@ -180,4 +180,28 @@ class GuestController extends Controller
         $product=Product::findOrFail($id);
         return view('pages.product',compact('product'));
     }
+
+    public function productCreate(){
+
+        return view('pages.productCreate');
+    }
+
+    public function productStore(Request $request){
+
+        $validated=$request->validate([
+            'name'=>'required|max:255',
+            'supplier'=>'required|max:255',
+            'price'=>'required|integer'
+        ]);
+        $img= $request ->file('img');
+        $imgExt = $img-> getClientOriginalExtension();
+        $imgNewName = time() . '_img.' . $imgExt;
+        $folder = '/product-img/';
+        $imgFile = $img ->storeAs($folder,$imgNewName,'public');
+        $product=Product::make($validated);
+        $product->img = $imgNewName;
+        $product->save();
+        
+        return redirect()->route('customerList');
+    }
 }

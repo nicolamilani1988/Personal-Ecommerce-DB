@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row justify-content-around">
         <div>
-            <a href="">
+            <a href="{{route('productCreate')}}">
                 <button class="btn btn-primary">CREATE NEW PRODUCT</button>
             </a>
         </div>
@@ -47,8 +47,11 @@
                                 <div class="col-1">
                                     PRICE
                                 </div>
-                                <div class="col-5">
+                                <div class="col-3">
                                     PIC
+                                </div>
+                                <div class="col-2">
+                                    TOT QUANTITA' ORDINATE
                                 </div>
                             </div>
                         </div>
@@ -70,8 +73,16 @@
                                     {{$product->price}}€
                                 </div>
                                 {{-- product pic --}}
-                                <div class="col-5">
+                                <div class="col-3">
+                                    @if ($product->id <= 100)
                                     <img src="{{$product->img}}" alt="" width="200px">
+                                    @else
+                                    <img src="{{asset('/storage/product-img/'.$product->img)}}" alt="" width="200px">  
+                                    @endif
+                                </div>
+                                {{-- ordered times --}}
+                                <div class="col-2">
+                                    {{$product->orders->count()}}                                 
                                 </div>
                             </div>
                         </div>                

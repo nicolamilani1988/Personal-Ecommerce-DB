@@ -67,3 +67,8 @@ Route::get('/delete/order/{id}','GuestController@orderDelete')
 //PRODUCT ROUTES
 Route::get('/product/{id}','GuestController@product') //scheda prodotto
 ->name('product');
+
+Route::get('createProduct','GuestController@productCreate')
+->name('productCreate');
+Route::post('storeProduct','GuestController@productStore')
+->name('productStore');

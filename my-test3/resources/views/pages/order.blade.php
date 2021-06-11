@@ -59,7 +59,11 @@
                         <div>Fornitore:{{$product->supplier}}</div>
                         <div>Prezzo:{{$product->price}}</div>
                         <div>
+                            @if ($product->id <= 100)
                             <img src="{{$product->img}}" alt="" width="200px">
+                            @else
+                            <img src="{{asset('/storage/product-img/'.$product->img)}}" alt="" width="200px">  
+                            @endif
                         </div>
                         <div>
                             <a href="{{route('orderProductDelete',[$order->id,$product->id])}}">

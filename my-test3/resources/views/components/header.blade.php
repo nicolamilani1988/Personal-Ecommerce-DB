@@ -2,7 +2,7 @@
     <div class="container">
         {{-- My logo --}}
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{asset('/storage/assets/img/logo.png')}}" alt="" width="50px">
+            <img src="{{asset('/storage/product-img/logo.png')}}" alt="" width="50px">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

@@ -55,7 +55,11 @@
                                         {{$product->price}}€
                                     </div>
                                     <div>
+                                        @if ($product->id <= 100)
                                         <img src="{{$product->img}}" alt="" width="50px">
+                                        @else
+                                        <img src="{{asset('/storage/product-img/'.$product->img)}}" alt="" width="50px">  
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
